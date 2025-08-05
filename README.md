@@ -56,26 +56,38 @@ k = 2 Trials
 
 <img width="538" height="455" alt="Hidden_2_" src="https://github.com/user-attachments/assets/877a7cdb-20dd-47ff-821b-ba86808bcec5" />
 
-Observation: At smaller hidden dimensions, FFN_GeGLU outperforms FFN_ReLU.
+Observation: ReLU significantly outperforms GeGLU at hidden dimensions 8 and slightly at 2, while GeGLU edges ahead at dimension 16.
+
+GeGLU performance drops sharply at hidden dimension 8, indicating instability with limited trials.
 
 k = 4 Trials
 
 <img width="537" height="456" alt="Hidden_4" src="https://github.com/user-attachments/assets/a1c6a15f-fe99-40da-ab08-7c50fda802a6" />
 
-Observation: The performance gap narrows, but FFN_GeGLU remains slightly more stable.
+Observation: Both models perform very similarly across dimensions, with GeGLU slightly ahead at dimensions 2 and 8.
+
+Stability improves for both models compared to k=2.
 
 k = 8 Trials
 
 <img width="538" height="476" alt="Hidden_8" src="https://github.com/user-attachments/assets/d09e628a-f594-4c36-a96e-6acf8912f731" />
 
-Observation: At larger hidden dimensions, both models perform similarly, but FFN_ReLU shows occasional dips likely due to poor hyperparameter choices.
+Observation: GeGLU consistently outperforms ReLU at all hidden dimensions, with the largest gap at lower dimensions (2 and 4).
+
+Higher trial count smooths out instability seen in k=2.
+
+
 
 4. Conclusion
-The results support the claim that FFN_GeGLU is generally better than FFN_ReLU, especially in low-parameter regimes (hidden dimensions 2 and 4). Its gating mechanism offers stable performance across different random search trials, while FFN_ReLU is more sensitive to hyperparameter variations.
+At low hidden dimensions (2, 4), GeGLU shows a clearer advantage as k increases, suggesting the gating mechanism provides more efficient representation in low-capacity models.
+
+At high hidden dimensions (8, 16), performance is comparable, but GeGLU still edges ahead in higher-trial experiments.
+
+The claim that FFN_GeGLU is better than FFN_ReLU is not strongly supported for k=2, but becomes more valid for k=4 and strongly valid for k=8.
 
 5. Limitations
-Training Duration: Only one epoch per trial — results may change with longer training.
+Training Duration: Only one epoch per trial — results may differ with longer training.
 
-Hyperparameter Search: Limited to random search; optimal configurations may not always be found.
+Hyperparameter Search: Limited to random search; grid search or Bayesian optimization might yield different results.
 
 Dataset Scope: Only tested on MNIST; results may not generalize to more complex datasets.
