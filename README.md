@@ -40,7 +40,7 @@ Select the configuration with maximum validation accuracy.
 
 Report test accuracy using bootstrap resampling (200 samples) to compute error bars.
 
-3. Results
+2. Results
 Three sets of plots were generated, one for each 
 𝑘
 k value (2, 4, 8), showing Test Accuracy vs Hidden Dimension for both models.
@@ -58,7 +58,7 @@ k = 4 Trials
 
 k = 8 Trials
 
-4. Analysis
+3. Analysis
 Low Hidden Dimensions (2, 4):
 FFN_GeGLU generally outperforms FFN_ReLU, confirming that the gating mechanism is more effective when model capacity is small.
 
@@ -70,10 +70,10 @@ FFN_GeGLU’s accuracy curve was smoother and more predictable across different
 𝑘
 k values, while FFN_ReLU showed occasional erratic behavior.
 
-5. Conclusion
+4. Conclusion
 The experimental results support the claim that FFN_GeGLU is better than FFN_ReLU, particularly in low-parameter settings. The gating mechanism in FFN_GeGLU helps it maintain stable, competitive performance across hidden dimensions and random search trials, making it a more reliable architecture under constrained conditions.
 
-6. Key Concepts & References
+5. Key Concepts & References
 Key Concepts:
 
 Feed-Forward Networks (FFNs)
