@@ -12,79 +12,13 @@ This hypothesis builds on prior research (Shazeer, 2020) showing that gating mec
 2. Setup
 Dataset:
 
-MNIST (with 5,000 images reserved for validation)
+MNIST 
 
 Models Compared:
 
-FFN_GeGLU:
+FFN_GeGLU and FFN_ReLU 
 
-FFN_GeGLU
-(
-𝑥
-)
-=
-𝑊
-𝑜
-𝑢
-𝑡
-⋅
-[
-(
-𝑊
-𝑖
-𝑛
-⋅
-𝑥
-)
-⊙
-GELU
-(
-𝑊
-𝑔
-𝑎
-𝑡
-𝑒
-⋅
-𝑥
-)
-]
-FFN_GeGLU(x)=W 
-out
-​
- ⋅[(W 
-in
-​
- ⋅x)⊙GELU(W 
-gate
-​
- ⋅x)]
-FFN_ReLU:
 
-FFN_ReLU
-(
-𝑥
-)
-=
-𝑊
-𝑜
-𝑢
-𝑡
-⋅
-ReLU
-(
-𝑊
-𝑖
-𝑛
-⋅
-𝑥
-)
-FFN_ReLU(x)=W 
-out
-​
- ⋅ReLU(W 
-in
-​
- ⋅x)
 Training Configuration:
 
 Epochs: 1 (One Epoch is All You Need)
@@ -119,15 +53,21 @@ NumPy, Matplotlib
 
 3. Observations
 k = 2 Trials
+
 <img width="538" height="455" alt="Hidden_2_" src="https://github.com/user-attachments/assets/877a7cdb-20dd-47ff-821b-ba86808bcec5" />
+
 Observation: At smaller hidden dimensions, FFN_GeGLU outperforms FFN_ReLU.
 
 k = 4 Trials
+
 <img width="537" height="456" alt="Hidden_4" src="https://github.com/user-attachments/assets/a1c6a15f-fe99-40da-ab08-7c50fda802a6" />
+
 Observation: The performance gap narrows, but FFN_GeGLU remains slightly more stable.
 
 k = 8 Trials
+
 <img width="538" height="476" alt="Hidden_8" src="https://github.com/user-attachments/assets/d09e628a-f594-4c36-a96e-6acf8912f731" />
+
 Observation: At larger hidden dimensions, both models perform similarly, but FFN_ReLU shows occasional dips likely due to poor hyperparameter choices.
 
 4. Conclusion
