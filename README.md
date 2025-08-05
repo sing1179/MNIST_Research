@@ -43,7 +43,7 @@ k∈{2,4,8}
 
 Selection Criterion: Best validation accuracy per hidden dimension/model
 
-Bootstrap Resampling: 200 samples for error bar estimation
+Bootstrap Resampling: 50 samples for error bar estimation
 
 Frameworks & Tools:
 
