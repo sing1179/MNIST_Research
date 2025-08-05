@@ -49,9 +49,11 @@ k value (2, 4, 8), showing Test Accuracy vs Hidden Dimension for both models.
 <img width="538" height="455" alt="Hidden_2_" src="https://github.com/user-attachments/assets/877a7cdb-20dd-47ff-821b-ba86808bcec5" />
 
 k = 2 Trials
+
 <img width="537" height="456" alt="Hidden_4" src="https://github.com/user-attachments/assets/a1c6a15f-fe99-40da-ab08-7c50fda802a6" />
 
 k = 4 Trials
+
 <img width="538" height="476" alt="Hidden_8" src="https://github.com/user-attachments/assets/d09e628a-f594-4c36-a96e-6acf8912f731" />
 
 k = 8 Trials
@@ -84,10 +86,3 @@ Random hyperparameter search
 
 Bootstrap confidence intervals
 
-References:
-
-Shazeer, Noam. "Gated Linear Units and the Future of Neural Architectures." arXiv preprint arXiv:2002.05202 (2020).
-
-PyTorch Lightning Documentation: https://lightning.ai/docs/pytorch/stable/
-
-MNIST Dataset: http://yann.lecun.com/exdb/mnist/
